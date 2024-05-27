@@ -1,3 +1,5 @@
+import { oneOfType } from 'prop-types'
+import PropTypes from 'prop-types'
 import './Card.css'
 
 
@@ -23,6 +25,14 @@ export const Card = ({ id, name, status, species, gender, image }) => {
 
 
     )
-
-
+   
 }
+
+Card.propTypes = {
+    id:oneOfType([PropTypes.string,PropTypes.number]).isRequired,
+    name:PropTypes.string.isRequired,
+    status:PropTypes.string.isRequired,
+    species: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+   }

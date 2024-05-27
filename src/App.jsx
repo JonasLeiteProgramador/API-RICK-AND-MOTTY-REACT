@@ -28,8 +28,6 @@ function App() {
       const personagem1 = await dados1.json();
       const personagem2 = await dados2.json();
       const personagem3 = await dados3.json();
-
-
       const personagem4 = await dados4.json();
       const personagem5 = await dados5.json();
       const personagem6 = await dados6.json();
@@ -40,17 +38,21 @@ function App() {
       console.log('Ocorreu algo ao efetuar a requisição', error);
     }
   }
-
   function deleted() {
     setPersonagens([]);
+    setPersonagens2([])
   }
 
   return (
     <>
       <div className='container'>
         <h1>Testando API DO RICK AND MORTY</h1>
-        <Button handleFunction={handleCharacter} title="Clique aqui para efetuar a requisição para a API do Rick and Morty" color="blue" />
-        <Button handleFunction={deleted} title="Apagar Personagens" color="red" />
+        <Button 
+        handleFunction={handleCharacter} 
+        title="Clique aqui para efetuar a requisição para a API do Rick and Morty" 
+        color="blue" />
+        <Button handleFunction={deleted} title="Apagar Personagens" color="red"
+         />
 
         <div className="cards-container">
           {personagens.map(personagem => (
